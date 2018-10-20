@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.HeatMapFragment">
+
+    <!-- Add a map fragment somewhere in here for building selection -->
+    <fragment
+        android:id="@+id/fraud_heat_map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:alignmentMode="alignMargins"
+        android:useDefaultMargins="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+    </fragment>
+</FrameLayout>
