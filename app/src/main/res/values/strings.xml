@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">HyperCUBES</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Notification Service -->
+    <string name="listening_foreground_noti_title">Inspector App</string>
+    <string name="listening_foreground_noti_body">Listening for fare evasion</string>
 </resources>

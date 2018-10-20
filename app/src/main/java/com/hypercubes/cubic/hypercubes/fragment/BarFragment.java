@@ -18,6 +18,7 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.hypercubes.cubic.hypercubes.R;
+import com.hypercubes.cubic.hypercubes.fraud.FraudProviderInterface;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +27,9 @@ public class BarFragment extends Fragment implements OnChartValueSelectedListene
 
     // Static tags
     private static final String TAG = "BarFragment";
+
+    // Member variables
+    FraudProviderInterface mFraudProvider;
 
     public BarFragment() {
         // Required empty public constructor
@@ -72,6 +76,17 @@ public class BarFragment extends Fragment implements OnChartValueSelectedListene
         barChart.setOnChartValueSelectedListener(this);
         barChart.setFitBars(true); // make the x-axis fit exactly all bars
         barChart.invalidate(); // refresh
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof FraudProviderInterface) {
+            mFraudProvider = (FraudProviderInterface) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
     }
 
     @Override

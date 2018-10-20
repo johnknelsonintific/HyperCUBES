@@ -1,5 +1,6 @@
 package com.hypercubes.cubic.hypercubes.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.res.ResourcesCompat;
@@ -23,6 +24,7 @@ import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.hypercubes.cubic.hypercubes.R;
+import com.hypercubes.cubic.hypercubes.fraud.FraudProviderInterface;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +40,7 @@ public class FraudPerAreaFragment extends Fragment implements OnChartValueSelect
     // Member variables
     private boolean imageViewShowing = false;
     private ImagePopup imagePopup;
+    FraudProviderInterface mFraudProvider;
 
     public FraudPerAreaFragment() {
         // Required empty public constructor
@@ -75,6 +78,17 @@ public class FraudPerAreaFragment extends Fragment implements OnChartValueSelect
         });
 
         return view;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof FraudProviderInterface) {
+            mFraudProvider = (FraudProviderInterface) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
     }
 
     private void SetLineChartData(LineChart lineChart){

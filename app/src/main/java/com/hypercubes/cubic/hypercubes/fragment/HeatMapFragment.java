@@ -1,5 +1,6 @@
 package com.hypercubes.cubic.hypercubes.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import com.google.android.gms.maps.model.TileOverlay;
 import com.google.android.gms.maps.model.TileOverlayOptions;
 import com.google.maps.android.heatmaps.HeatmapTileProvider;
 import com.hypercubes.cubic.hypercubes.R;
+import com.hypercubes.cubic.hypercubes.fraud.FraudProviderInterface;
 
 import java.util.ArrayList;
 
@@ -29,6 +31,7 @@ public class HeatMapFragment extends Fragment implements OnMapReadyCallback{
     // Member variable
     private HeatmapTileProvider mProvider;
     private TileOverlay mOverlay;
+    FraudProviderInterface mFraudProvider;
 
     public HeatMapFragment() {
         // Required empty public constructor
@@ -56,6 +59,17 @@ public class HeatMapFragment extends Fragment implements OnMapReadyCallback{
         mapFragment = (SupportMapFragment) getChildFragmentManager()
                 .findFragmentById(R.id.fraud_heat_map);
         mapFragment.getMapAsync(this);
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof FraudProviderInterface) {
+            mFraudProvider = (FraudProviderInterface) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
     }
 
     @Override

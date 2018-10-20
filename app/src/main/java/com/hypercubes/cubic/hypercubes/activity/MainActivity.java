@@ -15,10 +15,16 @@ import com.hypercubes.cubic.hypercubes.fragment.BarFragment;
 import com.hypercubes.cubic.hypercubes.fragment.FraudPerAreaFragment;
 import com.hypercubes.cubic.hypercubes.fragment.HeatMapFragment;
 import com.hypercubes.cubic.hypercubes.fragment.PieFragment;
+import com.hypercubes.cubic.hypercubes.fraud.FraudInstance;
+import com.hypercubes.cubic.hypercubes.fraud.FraudManager;
+import com.hypercubes.cubic.hypercubes.fraud.FraudProviderInterface;
+
+import java.io.IOException;
+import java.util.List;
 
 import me.relex.circleindicator.CircleIndicator;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements FraudProviderInterface {
 
     //Static tags
     private static final String TAG = "MainActivity";
@@ -27,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
     private static final int ANALYTICS_PIE_FRAGMENT = 1;
     private static final int ANALYTICS_FRAUD_PER_AREA_FRAGMENT = 2;
     private static final int ANALYTICS_HEAT_MAP_FRAGMENT = 3;
+
+    // Member variables
+    private FraudManager fraudManager = null;
 
     /**
      * The pager widget, which handles animation and allows swiping between analytic views
@@ -88,6 +97,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Get fraud information
+        fraudManager = new FraudManager();
+        try {
+            fraudManager.initializeFraudManager();//
+        } catch (IOException e) {
+            // Handle bad call for fraud attempts
+            e.printStackTrace();
+        }
+
         // Create Analytics fragments
         BarFragment barFragment = new BarFragment();
         PieFragment pieFragment = new PieFragment();
@@ -133,5 +151,10 @@ public class MainActivity extends AppCompatActivity {
         CircleIndicator indicator = (CircleIndicator) findViewById(R.id.indicator);
         indicator.setViewPager(mPager);
         Log.i(TAG, "Starting service");
+    }
+
+    @Override
+    public List<FraudInstance> getFraudInstances(){
+        return fraudManager.getFraudInstances();
     }
 }
