@@ -1,7 +1,31 @@
 <resources>
-    <string name="app_name">HyperCUBES</string>
+    <string name="app_name">Watch Dog</string>
 
     <!-- Notification Service -->
     <string name="listening_foreground_noti_title">Inspector App</string>
     <string name="listening_foreground_noti_body">Listening for fare evasion</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Login -->
+    <string name="username_login">Username</string>
+    <string name="password_login">Password</string>
+    <string name="login">Login</string>
+
+    <!-- Fraud notifications -->
+    <string name="fare_evasion_notification_title">Fare evasion Detected</string>
+    <string name="fare_evasion_notification_content">Fare evasion detected on line %s. Open app to view more information about the fraud event.</string>
+
+    <!-- Main Activity -->
+    <string name="fetching_history">Fetching history</string>
+
+    <!-- Fraud instance field labels -->
+    <string name="bus_line">Bus Line: </string>
+    <string name="location">Location: </string>
+    <string name="lat">Lat: </string>
+    <string name="lng">Lng: </string>
+    <string name="vehicle_id">Vehicle ID: </string>
+    <string name="operator_id">Operator ID: </string>
+    <string name="next_stop">Next Stop: </string>
+
+
 </resources>

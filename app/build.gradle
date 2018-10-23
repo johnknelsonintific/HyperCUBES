@@ -26,6 +26,7 @@ dependencies {
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
 
     // Image pop up
+    implementation 'com.android.support:design:26.1.0'
     compile 'com.github.chathuralakmal:AndroidImagePopup:1.2.1'
 
     // Google play services for map
@@ -40,8 +41,18 @@ dependencies {
     // okhttp
     implementation 'com.squareup.okhttp3:okhttp:3.11.0'
 
+    // nv-websocket
+    compile 'com.neovisionaries:nv-websocket-client:2.4'
+
     //GSON
     implementation 'com.google.code.gson:gson:2.8.5'
+
+    // Butter Knife
+    implementation 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+
+    // Picasso for loading remote pics
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:26.1.0'

@@ -5,6 +5,7 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="backgroundDark">#96606060</color>
+    <color name="white_70">#CCFFFFFF</color>
 
     <array name="primaries">
         <item name="red">#F44336</item>

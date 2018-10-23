@@ -7,40 +7,32 @@
     tools:context=".activity.FareEvasionActivity"
     android:orientation="vertical">
 
-    <LinearLayout
+    <!--<ImageView-->
+        <!--android:id="@+id/fare_evasion_image"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:scaleType="fitXY"-->
+        <!--android:layout_weight="3"/>-->
+
+    <WebView
+        android:id="@+id/image_webview"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-
-        <fragment
-            android:id="@+id/fare_evasion_map"
-            android:name="com.google.android.gms.maps.SupportMapFragment"
-            android:alignmentMode="alignMargins"
-            android:useDefaultMargins="true"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_weight="2">
-        </fragment>
-
-        <ImageView
-            android:id="@+id/fare_evasion_image"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"/>
-    </LinearLayout>
+        android:layout_weight="3"></WebView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        android:layout_weight="2">
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:layout_marginVertical="@dimen/activity_vertical_margin"
+        android:layout_weight="3">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
+            android:layout_marginLeft="@dimen/section_margin"
             android:layout_weight="1">
 
             <TextView
@@ -48,31 +40,50 @@
                 android:layout_height="wrap_content"
                 android:text="@string/bus_line"
                 android:textStyle="bold"
+                android:textSize="@dimen/text_size_fraud"
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/location"
                 android:textStyle="bold"
+                android:textSize="@dimen/text_size_fraud"
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/vehicle_id"
                 android:textStyle="bold"
+                android:textSize="@dimen/text_size_fraud"
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/operator_id"
                 android:textStyle="bold"
+                android:textSize="@dimen/text_size_fraud"
                 />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/next_stop"
-                android:textStyle="bold"
-                />
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@string/next_stop"-->
+                <!--android:textStyle="bold"-->
+                <!--android:textSize="@dimen/text_size_fraud"-->
+                <!--/>-->
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@string/lat"-->
+                <!--android:textStyle="bold"-->
+                <!--android:textSize="@dimen/text_size_fraud"-->
+                <!--/>-->
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@string/lng"-->
+                <!--android:textStyle="bold"-->
+                <!--android:textSize="@dimen/text_size_fraud"-->
+                <!--/>-->
         </LinearLayout>
 
 
@@ -83,9 +94,50 @@
             android:layout_weight="1">
 
             <TextView
+                android:id="@+id/bus_line_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_fraud"
                 />
+            <TextView
+                android:id="@+id/location_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_fraud"
+                />
+            <TextView
+                android:id="@+id/vehicle_id_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_fraud"
+                />
+            <TextView
+                android:id="@+id/operator_id_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_fraud"
+                />
+            <!--<TextView-->
+                <!--android:id="@+id/next_stop_text_view"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="@dimen/text_size_fraud"-->
+                <!--/>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/lat_text_view"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="@dimen/text_size_fraud"-->
+                <!--/>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/lng_text_view"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="@dimen/text_size_fraud"-->
+                <!--/>-->
+
 
         </LinearLayout>
 
